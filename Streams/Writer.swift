@@ -51,7 +51,7 @@ public class Writer: NSObject {
         while stream.hasSpaceAvailable && !isDone {
             var buffer = [UInt8].init(repeating: 0, count: size)
             writeCount = stream.write(&buffer, maxLength: size)
-            totalWriteCount = writeCount
+            totalWriteCount += writeCount
             totalWrites += 1
         }
 
